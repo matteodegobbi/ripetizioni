@@ -9,6 +9,7 @@ Su Java per utilizzare l'incapsulamento usiamo dei modifier davanti alle variabi
 I motivi per cui usiamo l'incapsulamento sono: 
 1) Impedire errori dovuti alla modifica di una variabile nei momenti sbagliati
 2) Fare in modo che venga inizializzata sempre con valori validi
+3) Limitare la condivisione dello stato tra oggetti separati
 
 L'information hiding però ci impedisce di sapere il valore di una variabile o modificarlo al di fuori della classe dove è stata creat,quindi se necessario creiamo dei metodi "getter" e "setter" per ogni campo messo a private.
 ### getter
