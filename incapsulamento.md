@@ -1,5 +1,8 @@
 # Incapsulamento/Information hiding
 È un modo per nascondere informazioni (variabili e metodi) da chi usa la classe che si sta creando.
+
+Nella OOP quindi possiamo nascondere il funzionamento interno della nostra classe dall'esterno e lasciare visibile solo una "interfaccia pubblica" che verrà usata da chi vuole usare la nostra classe.
+
 Su Java per utilizzare l'incapsulamento usiamo dei modifier davanti alle variabili/metodi/costanti, gli access modifier sono:
 * `private`:si può accedere solo all'interno della stessa classe
 * `protected`: si può accedere solo dall'interno dello stesso package o all'interno di classi figlie anche al di fuori del package

@@ -66,6 +66,15 @@ Di solito i costruttori inizializzano, direttamente o indirettamente, i campi de
 Si può ed è molto comune creare più costruttori per la stessa classe ( con firma diversa ) grazie all'overloading ( vedi file sull'overloading ).
 
 Se in una classe non viene definito nessun costruttore Java usa da solo un costruttore di default che inizializza tutti i campi al valore default ( 0 per i valori numerici, `null` per gli oggetti, `false` per i booleani ecc... )
+### `null`
+`null` è un valore speciale che rappresenta un oggetto vuoto.
+
+Prima di chiamare un costruttore per creare l'oggetto le variabili che come tipo hanno un oggetto varrano `null`. 
+
+Per confrontare se un oggetto ha valore null non si usa `equals` ma si usa `==` come per le variabili primitive. 
+
+Se si prova ad accedere a campi o metodi di una variabile `null` Java lancia una eccezione.
+
 
 ### Operatore `new`
 Per creare un oggetto tramite un costruttore si usa l'operatore `new` che alloca la memoria nell'heap e invoca il costruttore
