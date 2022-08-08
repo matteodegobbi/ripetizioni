@@ -48,6 +48,11 @@ void main(){
     a.corri(); //scrive auto
     m.corri(); //scrive moto
     v.corri(); //scrive veicolo
+
+    //non va perché m è contenuto in un Veicolo e quindi
+    //può quindi possiamo usare solo metodi contenuti in Veicolo
+    m.impenna(); 
+
 }
 ```
 TODO: casting, instanceof, getclass e errori.

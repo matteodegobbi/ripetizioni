@@ -44,7 +44,7 @@ Metodi e campi possono avere il modifier `static` oppure no, va messo prima del 
 Per accedere ai campi e ai metodi di una classe utilizziamo la notazione del punto cioè:
 * Per i metodi e campi `static` scriveremo `NomeClasse.nomeFunzione()` ( e.g. `Matematica.radiceQuadrata( double n )` )
 * Per i metodi e campi non-`static` possiamo accedervi solo avendo creato una istanza della classe ad esempio: 
-```
+```java
 //Creo una istanza di Cane
 Cane fido = new Cane("fido");
 
@@ -82,6 +82,36 @@ Per creare un oggetto tramite un costruttore si usa l'operatore `new` che alloca
 e.g. `Cane fido = new Cane("fido")`
 
 ___
+## `this`
+La parola chiave `this` serve a indicare il parametro implicito di un metodo non statico all'interno del metodo, cioè quando chiamiamo `macchina1.corri(20);` il parametro esplicito è 20 il parametro implicito è macchina1 quindi dentro il metodo `corri` scrivendo `this` ci riferiamo in questo caso a macchina1 ( se avessimo chiamato `corri` su macchina due allora si riferirebbe a macchina2 ecc... )
 
+### Usi di `this`:
+#### Aggirare lo shadowing
+Passare parametri ai metodi con lo stesso nome dei campi e aggirare lo shadowing ad esempio:
+```java
+void setEta(int eta){
+    this.eta = eta;
+}
+```
+così posso chiamare il parametro `eta` della funzione `setEta` con lo stesso nome del campo `eta` della mia classe a cui mi rifersico usando `this.eta` per distinguerlo dal parametro e aggirare lo shadowing.
 
-# TO DO: polimorfismo, this, final, copy constructor, factory method, null, heap vs stack, ...
+#### Chiamare costruttori della stessa classe
+Spesso quando scrivo un costruttore può essere utile chiamare uno degli altri costruttori prima in modo da evitare di dover riscrivere lo stesso codice più volte ad esempio:
+```java
+Cane(String nome,int eta){
+    this.nome=nome;
+    this.eta=eta;
+}
+
+Cane(String nome, int eta, String razza){
+    this(nome,eta)//uso this per richiamare l'altro costruttore
+    this.razza=razza;
+}
+
+```
+
+#### Ritornare `this` o passarlo come parametro
+`this` può essere passato come parametor a un altro metodo o anche essere usato come return di un metodo per passare/ritornare l'istanza corrente
+___
+
+# TO DO: final, copy constructor, factory method, heap vs stack, ...
